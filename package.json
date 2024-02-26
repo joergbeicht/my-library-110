@@ -8,6 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "watch_lib": "ng build my-library --watch",
+    "build_lib": "ng build my-library",
     "build_lib_prod": "ng build my-library --configuration=production",
     "npm_pack": "cd dist/my-library && npm pack",
     "build_and_pack": "npm run build_lib_prod && npm run npm_pack"

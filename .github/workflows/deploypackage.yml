@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build Lib
-        run: npm build_and_pack
+        run: npm run build_lib
       # - name: Copy npmrc to dist/anylibs
       #  run: echo "copy done"
       - name: Publish Lib to GitHub Packages
