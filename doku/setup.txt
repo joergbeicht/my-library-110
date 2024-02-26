@@ -1,0 +1,110 @@
+https://www.youtube.com/watch?v=as4e9v2_2TA
+
+>: nvm use 16.15.0
+>: ng new my-workspace3
+>: ng g library my-library
+
+Eine eigenen Component über die lib bereitstellen
+>: ng g c my-button --project=my-library
+
+Settings
+========
+damit die Component in anderen Apps genutzt werden kann:
+
+1. public-api.ts
+export * from './lib/my-button/my-button.component';
+2. my-library.module.ts
+
+  exports: [
+    MyLibraryComponent,
+  ->  MyButtonComponent
+  ]
+
+Bauen
+=====
+// --configuration=production macht eine aot-compilation für prod
+>:
+
+ng-package.json
+=> da steht wie die lib gebaut wird!
+
+Publish zu npm
+==============
+1, Wechsel in den dist Folder der lib
+>: cd ./my-workspace/dist/my-library
+>: npm pack
+>: npm publish --access public
+
+Update Package zu npm
+=====================
+>: ng build my-library --configuration=production
+// https://docs.npmjs.com/cli/v10/commands/npm-version
+>: cd ./dist/my-library ACHTUNG! Wichtig in den Ordern der kompilierten Lib wechseln!
+>: npm version patch => zählt version hoch! Allgemein npm version [patch | minor | major | …]
+>: npm publish
+
+Publish zu git Package
+======================
+https://medium.com/@brgrz/create-a-library-with-angular-and-publish-it-to-github-package-registry-c8184193b993
+
+>: npm login — scope=@joergbeicht — registry=https://npm.pkg.github.com
+
+
+
+Beispiel für eine Package-JSON
+https://medium.angularaddicts.com/how-to-create-angular-libraries-and-publish-them-with-an-example-73ee45b32916
+
+https://github.com/ng-packagr/ng-packagr/blob/main/docs/dependencies.md?source=post_page-----73ee45b32916--------------------------------
+https://blog.domenic.me/peer-dependencies/?source=post_page-----73ee45b32916--------------------------------
+
+
+Noch anschauen
+https://itnext.io/the-best-of-angular-a-collection-of-my-favorite-resources-of-2023-28c179bb9088
+https://medium.com/@GergelySzerovay
+
+
+Beste Artikel oder Serien zu Angular Libs
+Todd Palmer Teil 1 bis Teil 3
+https://medium.com/angular-in-depth/creating-a-library-in-angular-6-87799552e7e5
+https://medium.com/angular-in-depth/creating-a-library-in-angular-6-part-2-6e2bc1e14121
+https://angularindepth.com/posts/1124/the-angular-library-series-publishing
+
+In Teil 3 finden sich Beispiele wie die package.json wegen Licence etc. zu gestalten ist
+
+Peer Dependencies in depth
+https://dev.to/icy0307/peer-dependencies-in-depth-1o3b
+
+
+GitHub Packages
+https://github.com/features/packages
+
+https://medium.com/@brgrz/create-a-library-with-angular-and-publish-it-to-github-package-registry-c8184193b993
+https://www.talentica.com/blogs/a-step-by-step-guide-to-publishing-private-npm-package-on-github/
+
+https://docs.github.com/de/packages/quickstart
+https://docs.github.com/de/packages/working-with-a-github-packages-registry/working-with-the-npm-registry
+
+1. Create Personal Access Token
+https://github.com/settings/tokens/new
+write:packages and read:packages auswählen für 
+Upload packages to GitHub Package Registry
+Download packages from GitHub Package Registry
+Klick den Create Button
+
+Dies ist mein generierter Access-Token (für 90 Tage, Start 16.Feb)
+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
+
+2. globale .npmrc Datei erstellen/updaten
+Dieser Access-Token muss in die globale /Users/joergbeicht/.npmrc Datei
+//npm.pkg.github.com/:_authToken=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
+
+3. local .npmrc Datei erstellen/updaten. Also die der lib
+   Auf die Ebene auf der auch die lib package.json liegt.
+   Im Beispiel ./dist/my-library
+
+
+
+
+
+
+

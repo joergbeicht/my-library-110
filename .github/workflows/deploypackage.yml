@@ -1,0 +1,30 @@
+name: Deploy npm packages to github
+on:
+    push:
+      branches:
+        - main
+jobs:
+  build:
+    # environment: build-github-package
+    runs-on: ubuntu-latest
+    permissions:
+        contents: read
+        packages: write    
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v3
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install dependencies
+        run: npm ci
+      - name: Build Lib
+        run: npm build_and_pack
+      # - name: Copy npmrc to dist/anylibs
+      #  run: echo "copy done"
+      - name: Publish Lib to GitHub Packages
+        uses: colinparsonscom/publish-node-package@v0.1.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }} # optional; must be used with scope
+          scope: '@joergbeicht' # optional; must be used with github-token
