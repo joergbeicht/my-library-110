@@ -21,10 +21,13 @@ jobs:
         run: npm ci
       - name: Build Lib
         run: npm run build_lib
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
       # - name: Copy npmrc to dist/anylibs
       #  run: echo "copy done"
-      - name: Publish Lib to GitHub Packages
-        uses: colinparsonscom/publish-node-package@v0.1.0
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }} # optional; must be used with scope
-          scope: '@joergbeicht' # optional; must be used with github-token
+      #- name: Publish Lib to GitHub Packages
+      #  uses: colinparsonscom/publish-node-package@v0.1.0
+      #  with:
+      #    github-token: ${{ secrets.GITHUB_TOKEN }} # optional; must be used with scope
+      #    scope: '@joergbeicht' # optional; must be used with github-token
