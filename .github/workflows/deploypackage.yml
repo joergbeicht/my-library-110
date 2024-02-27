@@ -31,7 +31,7 @@ jobs:
       #  run: cp ./doku/.npmrc ./dist/my-library
       - name: Output contents
         run: ls -la ./dist/my-library        
-      - name: publish with repo
+      - name: publish with repo with admin 
         run: npm publish ./dist/my-library
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
