@@ -27,14 +27,14 @@ jobs:
         run: npm ci
       - name: Build Lib
         run: npm run build_and_pack
-      - name: change to dist-mylib-folder
-        run: cd dist/my-library        
       - name: Output contents
-        run: ls -la ./dist/my-library         
+        run: ls -la ./dist/my-library
+      - name: Copy npmrc File
+        run: cp ./doku/.npmrc ./dist/my-library
       - name: publish
-        run: npm publish
-        env:
-         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm publish ./dist/my-library
+        #env:
+         #NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # - name: Copy npmrc to dist/anylibs
       #  run: echo "copy done"
       #- name: Publish Lib to GitHub Packages
