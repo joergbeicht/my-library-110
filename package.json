@@ -1,6 +1,10 @@
 {
-  "name": "my-workspace",
-  "version": "0.0.0",
+  "name": "@joergbeicht/my-library-110",
+  "version": "0.0.6",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/joergbeicht/my-library-110.git"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
