@@ -30,7 +30,7 @@ jobs:
       - name: change to dist-mylib-folder
         run: cd dist/my-library        
       - name: Output contents
-        run: ls -la        
+        run: ls -la ./dist/my-library         
       - name: publish
         run: npm publish
         env:
