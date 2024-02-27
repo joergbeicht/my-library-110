@@ -35,6 +35,13 @@ jobs:
         run: npm publish ./dist/my-library
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload black-duck reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: Reports
+          path: |
+            ${{ github.workspace }}/home/runner/.npm/_logs/**/*
+
       #- name: publish
       #  run: npm publish ./dist/my-library
       #  env:

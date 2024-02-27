@@ -104,7 +104,4 @@ Dieser Access-Token muss in die globale /Users/joergbeicht/.npmrc Datei
 
 
 
-
-
-
-
+https://docs.github.com/en/packages/learn-github-packages/configuring-a-packages-access-control-and-visibility#selecting-whether-a-package-inherits-permissions-from-a-repository
