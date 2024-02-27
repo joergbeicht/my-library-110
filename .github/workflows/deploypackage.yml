@@ -25,10 +25,10 @@ jobs:
           scope: '@joergbeicht'       
       - name: Install dependencies
         run: npm ci
-      #- name: Build Lib
-      #  run: npm run build_and_pack
-      #- name: change to dist-mylib-folder
-      #  run: cd dist/my-library
+      - name: Build Lib
+        run: npm run build_and_pack
+      - name: change to dist-mylib-folder
+        run: cd dist/my-library
       - name: publish
         run: npm publish
         env:
