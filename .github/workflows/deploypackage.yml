@@ -34,7 +34,7 @@ jobs:
       - name: publish with Inherited access
         run: npm publish ./dist/my-library
         env:
-          NODE_AUTH_TOKEN: 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
+          NODE_AUTH_TOKEN: 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
       - name: Upload black-duck reports
         uses: actions/upload-artifact@v3
         with:
