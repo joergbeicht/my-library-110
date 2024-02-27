@@ -27,14 +27,14 @@ jobs:
         run: npm ci
       - name: Build Lib
         run: npm run build_and_pack
-      #- name: Copy npmrc File
-      #  run: cp ./doku/.npmrc ./dist/my-library
+      - name: Copy npmrc File
+        run: cp ./doku/.npmrc ./dist/my-library
       - name: Output contents
         run: ls -la ./dist/my-library        
       - name: publish without Inherited access
         run: npm publish ./dist/my-library
         env:
-          NODE_AUTH_TOKEN: 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
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload black-duck reports
         uses: actions/upload-artifact@v3
         with:
