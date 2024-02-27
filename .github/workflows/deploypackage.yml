@@ -27,8 +27,8 @@ jobs:
         run: npm ci
       - name: Build Lib
         run: npm run build_and_pack
-      #- name: change to dist-mylib-folder
-      #  run: cd dist/my-library        
+      - name: change to dist-mylib-folder
+        run: cd dist/my-library        
       - name: Output contents
         run: ls -la        
       - name: publish
