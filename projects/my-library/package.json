@@ -1,10 +1,6 @@
 {
-  "name": "@joergbeicht/my-library-110",
+  "name": "my-library-110",
   "version": "0.0.6",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/joergbeicht/my-library-110.git"
-  },
   "peerDependencies": {
     "@angular/common": "^16.2.0",
     "@angular/core": "^16.2.0",

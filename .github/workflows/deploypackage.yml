@@ -31,10 +31,10 @@ jobs:
       #  run: cp ./doku/.npmrc ./dist/my-library
       - name: Output contents
         run: ls -la ./dist/my-library        
-      #- name: publish without Inherited access
-      #  run: npm publish ./dist/my-library
-      #  env:
-      #    NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: publish
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       #- name: Upload reports
       #  uses: actions/upload-artifact@v3
       #  with:
@@ -48,8 +48,8 @@ jobs:
       #   NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # - name: Copy npmrc to dist/anylibs
       #  run: echo "copy done"
-      - name: Publish Lib to GitHub Packages
-        uses: colinparsonscom/publish-node-package@v0.1.0
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }} # optional; must be used with scope
-          scope: '@joergbeicht' # optional; must be used with github-token
+      #- name: Publish Lib to GitHub Packages
+      #  uses: colinparsonscom/publish-node-package@v0.1.0
+      #  with:
+      #    github-token: ${{ secrets.GITHUB_TOKEN }} # optional; must be used with scope
+      #    scope: '@joergbeicht' # optional; must be used with github-token
