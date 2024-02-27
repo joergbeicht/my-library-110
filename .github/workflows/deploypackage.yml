@@ -21,6 +21,8 @@ jobs:
         run: npm ci
       - name: Build Lib
         run: npm run build_lib
+      - name: change to dist-mylib-folder
+        run: cd dist/my-library
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
