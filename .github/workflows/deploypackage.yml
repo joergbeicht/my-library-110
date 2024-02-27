@@ -31,10 +31,14 @@ jobs:
       #  run: cp ./doku/.npmrc ./dist/my-library
       - name: Output contents
         run: ls -la ./dist/my-library        
-      - name: publish on github
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: FrontEndDev-org/publish-node-package-action@v1
+        with:
+          target: github
+
+      #- name: publish on github
+      #  run: npm publish
+      #  env:
+      #    NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       #- name: Upload reports
       #  uses: actions/upload-artifact@v3
       #  with:
