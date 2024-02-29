@@ -1,8 +1,7 @@
 name: Deploy npm packages to github
 on:
     push:
-      branches:
-        - main
+      branches: ["*"]
 jobs:
   build:
     # environment: build-github-package
