@@ -1,6 +1,6 @@
 {
   "name": "my-library-110",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -13,7 +13,7 @@
     "npm_pack": "cd dist/my-library && npm pack",
     "build_and_pack": "npm run build_lib_prod && npm run npm_pack"
   },
-  "private": false,
+  "private": true,
   "dependencies": {
     "@angular/animations": "^16.2.0",
     "@angular/common": "^16.2.0",

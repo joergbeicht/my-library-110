@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Injectable } from '@angular/core';
 import concat from 'lodash.concat';
 
@@ -6,10 +7,19 @@ import concat from 'lodash.concat';
 })
 export class MyButtonService {
 
-  constructor() { }
+  constructor(private datePipe: DatePipe) { }
 
   getGreeting() {
-    return 'Hi Jo ' + new Date().toISOString();
+
+    const newDate = new Date();
+    const pipe = this.datePipe.transform(
+      newDate,
+      'dd MMM yyyy : hh:mm:ss',
+      undefined,
+      'de-DE'
+    );
+
+    return 'Hi Jo ' + pipe;
   }
 
   doSomething() {

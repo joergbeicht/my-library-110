@@ -98,6 +98,9 @@ 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
 Dieser Access-Token muss in die globale /Users/joergbeicht/.npmrc Datei
 //npm.pkg.github.com/:_authToken=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
 
+Full access
+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
+
 3. local .npmrc Datei erstellen/updaten. Also die der lib
    Auf die Ebene auf der auch die lib package.json liegt.
    Im Beispiel ./dist/my-library
@@ -105,3 +108,7 @@ Dieser Access-Token muss in die globale /Users/joergbeicht/.npmrc Datei
 
 
 https://docs.github.com/en/packages/learn-github-packages/configuring-a-packages-access-control-and-visibility#selecting-whether-a-package-inherits-permissions-from-a-repository
+
+
+Hilfe;
+https://github.com/orgs/community/discussions/57724

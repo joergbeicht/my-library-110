@@ -32,10 +32,10 @@ jobs:
       #  run: cp ./doku/.npmrc ./dist/my-library
       - name: Output contents
         run: ls -la ./dist/my-library        
+      #  npm login --registry=https://npm.pkg.github.com --scope=@joergbeicht        
       - uses: FrontEndDev-org/publish-node-package-action@v1
         with:
           target: github
-
       #- name: publish on github
       #  run: npm publish
       #  env:
