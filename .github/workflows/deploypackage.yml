@@ -37,7 +37,7 @@ jobs:
       #  with:
       #    target: github
       - name: publish on github
-        run: npm publish
+        run: npm publish ./dist/my-library
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       #- name: Upload reports
