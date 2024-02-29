@@ -7,7 +7,7 @@ jobs:
   build:
     # environment: build-github-package
     runs-on: ubuntu-latest
-    permissions: write-all
+    # permissions: write-all
     #permissions:
     #    contents: read
     #    packages: write    
