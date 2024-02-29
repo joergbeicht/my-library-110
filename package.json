@@ -1,6 +1,10 @@
 {
   "name": "my-library-110",
   "version": "0.0.15",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/joergbeicht/my-library-110.git"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

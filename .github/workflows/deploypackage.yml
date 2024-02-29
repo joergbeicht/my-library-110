@@ -1,4 +1,4 @@
-name: Deploy npm packages to github
+name: Deploy npm packages to github v2
 on:
     push:
       branches:
