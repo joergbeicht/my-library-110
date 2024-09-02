@@ -1,6 +1,17 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/my-library",
+  "assets": [
+    "./assets/themes",
+    "./assets/fonts",
+    "./assets/images",
+    "./assets/themes",
+    "./assets/_fonts.scss",
+    "./assets/_lib-main.scss",
+    "./assets/_lib-mixins.scss",
+    "./assets/_lib-variables.scss",
+    "./assets/lib-styles.scss"
+  ],
   "lib": {
     "entryFile": "src/public-api.ts"
   },

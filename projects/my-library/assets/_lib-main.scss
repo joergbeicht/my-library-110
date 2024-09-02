@@ -1,0 +1,47 @@
+// Sample: How to make default Font and Color, etc.
+body {
+  font-family: "Roboto";
+  background-color: $background-color;
+  color: $color;
+}
+
+// Sample: How to make available images from the lib
+h1.logo:before {
+  content: "";
+  background-image: url('images/angular-next.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-inline-end: 1rem;
+}
+h1.logo.next:before {
+  background-image: url('images/angular-next.png');
+}
+
+.logo2:before {
+  content: "";
+  background-image: url('images/angular-next.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-inline-end: 1rem;
+}
+
+.logo3 {
+  content: "";
+  background-image: url('images/cariad-logo-noSublime.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  display: inline-block;
+  width: 20.5rem;
+  height: 8.5rem;
+  margin-inline-end: 1rem;
+  border: 1px red solid;
+}

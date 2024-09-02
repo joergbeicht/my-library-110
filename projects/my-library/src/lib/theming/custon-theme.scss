@@ -1,0 +1,198 @@
+/* - Material Theme Generator https://materialtheme.arcsine.dev/
+   - Material Desing - Material palette generator
+     The color system - https://m2.material.io/design/color/the-color-system.html#color-theme-creation
+   - Material Design Overview Color Pallets
+     https://m1.material.io/style/color.html#color-color-palette
+*/
+
+@use '@angular/material' as mat;
+@import '@angular/material/theming';
+
+@include mat.core();
+
+@include mat.strong-focus-indicators((
+  border-style: dotted,
+  border-width: 4px,
+  border-radius: 2px,
+));
+
+
+// Light Theme Text
+$dark-text: #000000;
+$dark-primary-text: rgba($dark-text, 0.87);
+$dark-accent-text: rgba($dark-primary-text, 0.54);
+$dark-disabled-text: rgba($dark-primary-text, 0.38);
+$dark-dividers: rgba($dark-primary-text, 0.12);
+$dark-focused: rgba($dark-primary-text, 0.12);
+
+$light-primary-text: white;
+
+$cariad-primary-palette: (
+  900: #000000,
+  800: #181d1f,
+  700: #353E40,
+  600: #565C5F,
+  500: #929898,
+  400: #B2B8BB,
+  300: #D2D5DF,
+  200: #E4EBEE,
+  100: #EDF4F7,
+  50: #F3FAFD,
+
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+  )
+);
+
+$cariad-accent-palette: (
+  50: #f7fee6,
+  100: #ecfac1,
+  200: #e0f997,
+  300: #d3f66a,
+  400: #c8f243,
+  500: #bfef00,
+  600: #b4dc00,
+  700: #a5c500,
+  800: #97ad00,
+  900: #808600,
+  // A100: #8c9eff,
+  // A200: #536dfe,
+  // A400: #3d5afe,
+  // A700: #304ffe,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $dark-primary-text,
+    600: $dark-primary-text,
+    700: $dark-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    // A100: $dark-primary-text,
+    // A200: $light-primary-text,
+    // A400: $light-primary-text,
+    // A700: $light-primary-text,
+  )
+);
+
+$cariad-warn-palette: (
+  main: #ff0000,
+  lighter: #ffb3b3,
+  darker: #ff0000,
+  200: #ff0000, // For slide toggle,
+  300: #bf0909, // For slide toggle,
+  contrast : (
+    main: $light-primary-text,
+    lighter: $dark-primary-text,
+    darker: $light-primary-text,
+  )
+);
+
+// Dark Theme text
+$light-text: #ffffff;
+$light-primary-text: $light-text;
+$light-accent-text: rgba($light-primary-text, 0.7);
+$light-disabled-text: rgba($light-primary-text, 0.5);
+$light-dividers: rgba($light-primary-text, 0.12);
+$light-focused: rgba($light-primary-text, 0.12);
+
+$mat-dark-theme-foreground: (
+  base:              $light-text,
+  divider:           $light-dividers,
+  dividers:          $light-dividers,
+  disabled:          $light-disabled-text,
+  disabled-button:   rgba($light-text, 0.3),
+  disabled-text:     $light-disabled-text,
+  elevation:         black,
+  hint-text:         $light-disabled-text,
+  secondary-text:    $light-accent-text,
+  accent-text:       $light-accent-text,
+  icon:              $light-text,
+  icons:             $light-text,
+  text:              $light-text,
+  slider-min:        $light-text,
+  slider-off:        rgba($light-text, 0.3),
+  slider-off-active: rgba($light-text, 0.3),
+);
+
+// Dark bg
+$dark-background:     #252943;
+$dark-bg-lighter-5:   lighten($dark-background, 5%);
+$dark-bg-lighter-10:  lighten($dark-background, 10%);
+$dark-bg-lighter-20:  lighten($dark-background, 20%);
+$dark-bg-lighter-30:  lighten($dark-background, 30%);
+$light-bg-alpha-4:    rgba(#fafafa, 0.04);
+$light-bg-alpha-12:   rgba(#fafafa, 0.12);
+
+// Background palette for dark themes.
+$mat-dark-theme-background: (
+  background:               $dark-background,
+  status-bar:               $dark-bg-lighter-20,
+  app-bar:                  $dark-bg-lighter-5,
+  hover:                    $light-bg-alpha-4,
+  card:                     $dark-background,
+  dialog:                   $dark-bg-lighter-5,
+  tooltip:                  $dark-bg-lighter-20,
+  disabled-button:          $light-bg-alpha-12,
+  raised-button:            $dark-bg-lighter-5,
+  focused-button:           $light-focused,
+  selected-button:          $dark-bg-lighter-20,
+  selected-disabled-button: $dark-bg-lighter-30,
+  disabled-button-toggle:   $dark-bg-lighter-10,
+  unselected-chip:          $dark-bg-lighter-20,
+  disabled-list-option:     $dark-bg-lighter-10,
+);
+
+
+$primary: mat.define-palette($cariad-primary-palette, 800, 600, 900);
+
+$accent: mat.define-palette($cariad-accent-palette, 500, 100, 900);
+
+$warn: mat.define-palette($cariad-warn-palette, main, lighter, darker);
+
+$theme-light: mat.define-light-theme((color: (
+        primary: $primary,
+        accent: $accent,
+        warn: $warn,
+      ),
+));
+
+$theme-dark: mat.define-dark-theme((color: (
+        primary: $primary,
+        accent: $accent,
+        warn: $warn,
+      ),
+));
+
+.theme-light {
+  @include mat.all-component-themes($theme-light);
+}
+
+.theme-dark {
+  @include mat.all-component-themes($theme-dark);
+}
+
+// Extra Colors
+$mat-cyan-palette: mat-palette($mat-cyan);
+
+.material-icons {
+  font-size: 24px;
+  font-family: 'Material Icons', 'Material Icons';  
+  .mat-badge-content {
+    font-family: 'Roboto';
+  }
+}
+
+
+

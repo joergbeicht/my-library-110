@@ -12,6 +12,12 @@
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "paths": {
+      "cm-header": [
+        "dist/cm-header"
+      ],
+      "ds-header": [
+        "dist/ds-header"
+      ],
       "my-library": [
         "dist/my-library"
       ]

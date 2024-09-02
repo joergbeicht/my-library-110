@@ -1,0 +1,18 @@
+1. Erstelle den Ordner /projects/shared-styles
+2. Updaten angular.json mit 
+          "stylePreprocessorOptions": {
+              "includePaths": ["projects/shared-styles", "dist"]
+            },
+3. Um den Ordner in die Lib aufzunehmen muss ng-package.json updated werden.
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/bcd-shell",
+  "deleteDestPath": false,
+  "lib": {
+    "entryFile": "src/public-api.ts",
+    "styleIncludePaths": ["../shared-styles"]
+  }
+}
+4. Erstelle theme.scss
+5. Update angular.json
+   Entferne prebuild theme und ergänze theme.scss

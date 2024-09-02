@@ -1,0 +1,68 @@
+<div fxLayout="row" fxLayoutAlign="start center">
+  <mat-toolbar class="header-toolbar">
+    <!-- Menu or Backspace Icon -->
+    <div>
+      <button
+        class="sidenav-toggle-button"
+        mat-icon-button
+        [disabled]="isSidenavToggleDisabled"
+        [hidden]="isSidenavToggleHidden"
+        (click)="sidenavToggle.emit()"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+
+    <!-- Logo -->
+    <img
+      class="logo"
+      [src]="logoPath"
+      [alt]="logoAltText"
+      [routerLink]="homePath"
+      matTooltip="Home"
+      matTooltipClass="mat-tooltip-class"
+    />
+
+    <!-- App Title and Version -->
+    <span fxLayout="row" fxLayoutAlign="center center" fxHide.lt-sm="true" class="header-title"
+      >{{ appTitle }} <span *ngIf="appVersionNumber">&nbsp;-&nbsp;</span> {{ appVersionNumber }}</span
+    >
+
+    <!-- Spacer to push content to the right -->
+    <span class="flex-spacer"></span>
+
+    <!-- User Menu -->
+    <div [hidden]="isUserMenuHidden" class="user-menu">
+      <ul class="user-menu-items">
+        <li>
+          <button
+            mat-raised-button
+            [matMenuTriggerFor]="userMenu"
+            matTooltip="account details"
+            matTooltipClass="mat-tooltip-class"
+            matTooltipPosition="below"
+          >
+            <mat-icon>account_circle</mat-icon>
+            <span class="user-name" *ngIf="userData; else loginBlock">{{ userName }}</span>
+            <ng-template #loginBlock>
+              <span>No Login Data</span>
+            </ng-template>
+            <mat-icon>arrow_drop_down</mat-icon>
+          </button>
+          <mat-menu
+            #userMenu="matMenu"
+            class="user-mat-menu"
+            xPosition="after"
+            yPosition="below"
+            matTooltip="account details"
+            matTooltipPosition="below"
+          >
+            <menu *ngFor="let data of userData" mat-menu-item class="header-menu">
+              <span #headerMenu class="header-menu-text">{{ data.key }}: {{ data.value }}</span>
+            </menu>
+          </mat-menu>
+        </li>
+      </ul>
+    </div>
+  </mat-toolbar>
+</div>

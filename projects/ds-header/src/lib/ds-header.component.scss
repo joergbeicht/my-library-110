@@ -1,0 +1,47 @@
+:host {
+  align-items: center;
+}
+
+.flex-spacer {
+  flex: 1 0 auto;
+}
+
+.nav-items {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    margin-left: 20px;
+  }
+}
+
+.header-toolbar {
+  .logo {
+    height: 50px;
+    padding: 7px 0px;
+    cursor: pointer;
+  }
+
+  .header-title {
+    font-size: 20px;
+    padding: 2px 0px 0px 0px;
+  }
+
+  ul.user-menu-items {
+    list-style: none;
+  }
+}
+
+.header-menu-text {
+  font-size: 14px;
+}
+
+::ng-deep .mat-tooltip-class {
+  font-size: 14px;
+}
+
+::ng-deep .mat-mdc-menu-panel {
+  max-width: unset !important;
+}

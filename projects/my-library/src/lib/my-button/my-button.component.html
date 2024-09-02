@@ -1,7 +1,79 @@
+<mat-toolbar color="primary">
+  <!-- Menu or Backspace Icon -->
+  <div>
+    <button class="sidenav-toggle-button" mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <ng-template>
+    <button mat-icon-button>
+      <mat-icon>keyboard_backspace</mat-icon>
+    </button>
+  </ng-template>
+
+  <!-- Logo -->
+  <!-- <img
+      class="logo"
+      [src]="logoPath"
+      [alt]="logoAltText"
+      matTooltip="Home"
+      matTooltipClass="logo-tooltip"
+    /> -->
+
+  <!-- App Title and Version -->
+  <span>appTitle <span></span>appVersionNumber</span>
+
+  <!-- Spacer to push content to the right -->
+  <span class="flex-spacer"></span>
+
+  <div class="language-menu" fxHide.xs>
+    <ul class="language-nav-items">
+      <li>
+        <button mat-raised-button>
+          selectedLanguageText
+          <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+        <mat-menu>
+          <button mat-menu-item>languageText</button>
+        </mat-menu>
+      </li>
+    </ul>
+  </div>
+
+  <!-- User Menu -->
+  <div>
+    <ul class="user-menu-items">
+      <li>
+        <button id="menuButton" mat-raised-button>
+          <mat-icon>account_circle</mat-icon>
+          <span class="user-name">userName</span>
+          <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+        <mat-menu
+          class="mat-menu-panel headerMenu"
+          #userMenu="matMenu"
+          xPosition="after"
+          yPosition="below"
+          matTooltip="account details"
+          matTooltipPosition="below"
+        >
+          <menu mat-menu-item> <span>dataKey: dataValue</span></menu>
+          <button mat-menu-item>
+            <mat-icon>power_settings_new</mat-icon>
+            <span>logout</span>
+          </button>
+        </mat-menu>
+      </li>
+    </ul>
+  </div>
+</mat-toolbar>
+
 <p>my-button works!</p>
 
-<button (click)="setGreeting()">Hello World V9</button>
+<button mat-raised (click)="setGreeting()" color="promary">
+  Hello World V9
+</button>
 
 <div *ngIf="greetingText">
- {{greetingText}}
+  {{ greetingText }}
 </div>
