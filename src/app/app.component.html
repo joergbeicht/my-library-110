@@ -1,15 +1,24 @@
-<h1>Root App</h1>
+<lib-ds-header
+  [logoPath]="'/custom-assets/cariad-logo-noSublime.svg'"
+  [logoAltText]="'cariad logo'"
+  [homePath]="'test'"
+  [appTitle]="'Your App-Title'"
+  [appVersionNumber]="'1.0.0'"
+  [isSidenavToggleDisabled]="false"
+  [isSidenavToggleHidden]="false"
+  [userData]="userData"
+  [isUserMenuHidden]="false"
+></lib-ds-header>
 
-<h3>Lib-Components</h3>
-
-<h4>Using Lib 1</h4>
 <lib-my-button></lib-my-button>
-
-<h4>Using Lib 2 with dependencies</h4>
-<button (click)="useDependencieComponent()">Drück mich</button>
-<div *ngIf="listOfData" >{{listOfData}}</div>
 
 <div class="demo-image">
     <h3>Style: Using Image</h3>
     <img [src]="'/custom-assets/angular-next.png'" alt="I am a Image from the Asset Library" />
   </div>
+
+  <div [ngStyle]="{ 'padding' : '30px'}">
+    <div class="custom-add-button">
+      <span>add</span>
+    </div>
+  </div>  

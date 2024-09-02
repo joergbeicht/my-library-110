@@ -11,6 +11,13 @@ export class AppComponent {
 
   listOfData: any;
 
+  userData = [
+    { key: 'User', value: 'John Doe' },
+    { key: 'Group', value: 'Cariad' },
+    { key: 'Role', value: 'Admin' },
+    { key: 'Email', value: 'extern.john.doe@cariad.technology' },
+  ];
+
   constructor(private myButtonService: MyButtonService) {}
 
   useDependencieComponent() {

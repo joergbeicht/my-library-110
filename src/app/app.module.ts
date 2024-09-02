@@ -4,15 +4,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { MyButtonService, MyLibraryModule } from 'my-library';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TestComponent } from './components/test/test.component';
+import { AppRoutingModule } from './app-routing.module';
+import { DsHeaderModule } from 'projects/ds-header/src/public-api';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
     MyLibraryModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    DsHeaderModule
   ],
   providers: [MyButtonService],
   bootstrap: [AppComponent]
