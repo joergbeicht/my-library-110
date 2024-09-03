@@ -1,3 +1,26 @@
 $background-color: rgb(196,255,239) !default;
 $color: white !default;
 
+// Background Colors
+$dark-background:     #181d1f;
+$dark-bg-lighter-5:   lighten($dark-background, 5%);
+$dark-bg-lighter-10:  lighten($dark-background, 10%);
+$dark-bg-lighter-20:  lighten($dark-background, 20%);
+$dark-bg-lighter-30:  lighten($dark-background, 30%);
+$dark-bg-lighter-40:  lighten($dark-background, 40%);
+$dark-bg-lighter-50:  lighten($dark-background, 50%);
+$light-bg-alpha-4:    rgba(#fafafa, 0.04);
+$light-bg-alpha-12:   rgba(#fafafa, 0.12);
+
+// Default Colors
+$ds-primary: #1c1c1c;
+$ds-accent: #00dbdd;
+$ds-error: #ee5340;
+$ds-success: #1eef98 !default;
+$ds-running: #fbc02d;
+$ds-black: #000000;
+$ds-white: #ffffff;
+
+// Default Fontsize
+$ds-fs-default: 1.0625rem;
+$ds-fs-small: 0.9375rem;

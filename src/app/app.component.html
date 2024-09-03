@@ -12,13 +12,92 @@
 
 <lib-my-button></lib-my-button>
 
-<div class="demo-image">
-    <h3>Style: Using Image</h3>
-    <img [src]="'/custom-assets/angular-next.png'" alt="I am a Image from the Asset Library" />
+<mat-toolbar>
+  <div>
+    <button mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
   </div>
+  <ng-template>
+    <button mat-icon-button>
+      <mat-icon>keyboard_backspace</mat-icon>
+    </button>
+  </ng-template>
+  <span>appTitle <span></span>appVersionNumber</span>
+  <span class="flex-spacer"></span>
+  <div class="language-menu" fxHide.xs>
+    <ul class="language-nav-items">
+      <li>
+        <button mat-raised-button>
+          selectedLanguageText
+          <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+        <mat-menu>
+          <button mat-menu-item>languageText</button>
+        </mat-menu>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul class="user-menu-items">
+      <li>
+        <button id="menuButton" mat-raised-button>
+          <mat-icon>account_circle</mat-icon>
+          <span class="user-name">userName</span>
+          <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+        <mat-menu
+          class="mat-menu-panel headerMenu"
+          #userMenu="matMenu"
+          xPosition="after"
+          yPosition="below"
+          matTooltip="account details"
+          matTooltipPosition="below"
+        >
+          <menu mat-menu-item> <span>dataKey: dataValue</span></menu>
+          <button mat-menu-item>
+            <mat-icon>power_settings_new</mat-icon>
+            <span>logout</span>
+          </button>
+        </mat-menu>
+      </li>
+    </ul>
+  </div>
+</mat-toolbar>
 
-  <div [ngStyle]="{ 'padding' : '30px'}">
-    <div class="custom-add-button">
-      <span>add</span>
-    </div>
-  </div>  
+<div class="demo-image">
+  <h3>Style: Using Image</h3>
+  <img
+    [src]="'/custom-assets/angular-next.png'"
+    alt="I am a Image from the Asset Library"
+  />
+</div>
+
+<div class="custom-add-button">
+  <span>add</span>
+</div>
+
+<div [ngStyle]="{ padding: '30px' }">
+  <div class="demo-variable-color">
+    <span>add</span>
+  </div>
+</div>
+
+<button mat-icon-button color="primary">
+  <mat-icon>menu</mat-icon>
+</button>
+
+<button mat-raised-button color="primary">
+  Material Primary Color
+  <mat-icon>add</mat-icon>
+</button>
+
+<button mat-raised-button color="accent">
+  Material Accent Color
+  <mat-icon>info</mat-icon>
+</button>
+
+<button mat-raised-button color="warn">
+  Material Warn Color
+  <mat-icon>delete</mat-icon>
+</button>

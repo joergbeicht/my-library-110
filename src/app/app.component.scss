@@ -1,41 +1,14 @@
-// @import "dist/my-library/assets/lib-styles.scss";
-// @import "dist/my-library/assets/themes/_custom-theme.scss";
+// @import 'dist/my-library/assets/lib-styles.scss';
 
-button {
-    background-color: darkgreen;
-    border: 0px;
-    border-radius: 5px;
-    color: white;
-    padding: 10px;
-    font-size: 20px;
-    cursor: pointer;
-    outline: none;
-}
-
-div {
-    width: 200px;
-    height: 200px;
-    border: 1px black solid;
-    color: black;
-}
-
-.demo-image {
-    display: block;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
+// .demo-variable-color {
+//     border: 5px solid $ds-success;
+//     background-color: $ds-success;  
+//     margin: auto;
+//     width: 140px;
+//     padding: 10px;
+//     text-align: center;
   
-    h3 {
-      display: block;
-    //   color: $dark-bg-lighter-40;
-    }
-  
-    img {
-      zoom: 0.6;
-    }
-    
-  }
-
-  // .custom-add-button {
-  //   @include custom-button(blue);
-  // }
+//     &:hover {
+//       background: rgba($ds-success, 0.6);
+//     }
+//   }  

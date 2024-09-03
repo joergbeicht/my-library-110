@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TestComponent } from './components/test/test.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DsHeaderModule } from 'projects/ds-header/src/public-api';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DsHeaderModule } from 'projects/ds-header/src/public-api';
     MyLibraryModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    DsHeaderModule
+    DsHeaderModule,
+    MaterialModule
   ],
   providers: [MyButtonService],
   bootstrap: [AppComponent]

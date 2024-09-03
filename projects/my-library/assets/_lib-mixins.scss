@@ -11,3 +11,16 @@
     right: auto;
   };
 }
+
+@mixin custom-button($color: red) {
+  border: 5px solid $color;
+  background-color: $color;  
+  margin: auto;
+  width: 140px;
+  padding: 10px;
+  text-align: center;
+
+  &:hover {
+    background: rgba($color, 0.6);
+  }
+}
